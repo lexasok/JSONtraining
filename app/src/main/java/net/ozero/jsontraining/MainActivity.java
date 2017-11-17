@@ -2,6 +2,7 @@ package net.ozero.jsontraining;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -63,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
             if (listView != null) {
                 listView.setAdapter(adapter);
             }
+
+            JSONObject nested = root.getJSONObject("nested");
+            Log.d("TAG","flag value " + nested.getBoolean("flag"));
 
         } catch (JSONException e) {
             e.printStackTrace();
