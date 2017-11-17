@@ -2,6 +2,7 @@ package net.ozero.jsontraining;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
                 items.add(object.getString("company"));
             }
 
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+            
 
         } catch (JSONException e) {
             e.printStackTrace();
